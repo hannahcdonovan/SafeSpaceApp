@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <h1>Publish Subscribe example</h1>
+    <p>Open this page in a new browser tab and click "Publish a message".</p>
+    <p>The new tab and this tab will both simultaneously receive the published message as both clients are subscribed to the "sport" channel.</p>
+    <button id="publish">Publish a message</button>
+    <input type="text" id="msg" value="">
+  </body>
+
+  <!-- Include the latest Ably Library  -->
+  <script src="https://cdn.ably.io/lib/ably.min.js"></script>
+
+  <!-- Instance the Ably library  -->
+  <script type="text/javascript">
+    var realtime = new Ably.Realtime("7edXEA.h9FB0A:8ISSjFQu2gFzzviH"); /* ADD YOUR API KEY HERE */
+
+    /* Subscribe to messages on the sport channel */
+    var channel = realtime.channels.get("sport");
+    channel.subscribe(function(msg) {
+    /*alert("Received: " + JSON.stringify(msg.data));*/
+      var t = document.createTextNode(JSON.stringify(msg.data));
+      linebreak = document.createElement("br");
+      document.body.appendChild(linebreak);
+      document.body.appendChild(t);
+      document.getElementById("msg").value = "";
+    });
+
+  /* Publish a message when the button is pressed */
+    document.getElementById("publish").addEventListener("click", function() {
+      channel.publish("update", document.getElementById("msg").value);
+    })
+
+    document.addEventListener('keypress', function (e) {
+      var key = e.which || e.keyCode;
+        if (key === 13) { // 13 is enter
+          channel.publish("update", document.getElementById("msg").value);
+        }
+    });
+  </script>
+</html>
