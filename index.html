@@ -1,9 +1,33 @@
 <html>
+  <head>
+    <style>
+    .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       background-color: white;
+       color: white;
+       text-align: left;
+    }
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    </style>
+  </head>
   <body>
     <h1>Bowdoin College Safe Space</h1>
     <p>Open this page in a new browser tab and click "Message".</p>
     <button id="publish">Message</button>
-    <input type="text" id="msg" value="">
+    <div class="footer">
+      <input type="text" id="msg" value="">
+    </div>
   </body>
 
   <!-- Include the latest Ably Library  -->
