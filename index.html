@@ -55,7 +55,7 @@
     var channel = realtime.channels.get("sport");
     channel.subscribe(function(msg) {
     /*alert("Received: " + JSON.stringify(msg.data));*/
-      var t = document.createTextNode(JSON.stringify(msg.data));
+      var t = document.createTextNode(JSON.stringify(msg.data).replace(/['"]+/g, ''));
       linebreak = document.createElement("br");
       document.body.appendChild(linebreak);
       document.body.appendChild(t);
@@ -64,13 +64,17 @@
 
   /* Publish a message when the button is pressed */
     document.getElementById("publish").addEventListener("click", function() {
-      channel.publish("update", document.getElementById("msg").value);
+      if (document.getElementById("msg").value != '') {
+        channel.publish("update", document.getElementById("msg").value);
+      }
     })
 
     document.addEventListener('keypress', function (e) {
       var key = e.which || e.keyCode;
         if (key === 13) { // 13 is enter
-          channel.publish("update", document.getElementById("msg").value);
+          if (document.getElementById("msg").value != '') {
+            channel.publish("update", document.getElementById("msg").value);
+          }
         }
     });
   </script>
