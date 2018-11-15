@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <input type="text" id="email" value="">
+    <input type="password" id="pass" value="">
+    <input type="submit" id="signup" value="Sign Up">
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script src="firebase.js">/</script>
+<script type="text/javascript">
+
+/* Publish a message when the button is pressed */
+  document.getElementById("signup").addEventListener("click", function() {
+    if (document.getElementById("email").value != '' && document.getElementById("pass").value != '') {
+      var email = document.getElementById("email").value
+      var password = document.getElementById("pass").value
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      });
+    }
+  })
+</script>

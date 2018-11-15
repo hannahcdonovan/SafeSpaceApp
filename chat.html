@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="custom-chat.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Ensures correct charset used -->
+    <meta charset="utf-8">
+    <!-- Ensures bootstrap is responsive to mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <body class="container-fluid">
+    <div class="text-center">
+
+      <img src="logo.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="input-group">
+      <input type="text" id="msg" value="" class="form-control">
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" id="publish"> Send </button>
+      </span>
+    </div>
+
+  <!-- Include the latest Ably Library  -->
+  <script src="https://cdn.ably.io/lib/ably.min.js">
+  </script>
+
+  <!-- Instance the Ably library  -->
+  <script type = "text/javascript">
+    var realtime = new Ably.Realtime("7edXEA.h9FB0A:8ISSjFQu2gFzzviH"); /* ADD YOUR API KEY HERE */
+
+    /* Subscribe to messages on the sport channel */
+    var channel = realtime.channels.get("sport");
+    channel.subscribe(function(msg) {
+    /*alert("Received: " + JSON.stringify(msg.data));*/
+      var t = document.createTextNode(JSON.stringify(msg.data).replace(/['"]+/g, ''));
+      linebreak = document.createElement("br");
+      document.body.appendChild(linebreak);
+      document.body.appendChild(t);
+      document.getElementById("msg").value = "";
+    });
+
+  /* Publish a message when the button is pressed */
+    document.getElementById("publish").addEventListener("click", function() {
+      if (document.getElementById("msg").value != '') {
+        channel.publish("update", document.getElementById("msg").value);
+      }
+    })
+
+    document.addEventListener('keypress', function (e) {
+      var key = e.which || e.keyCode;
+        if (key === 13) { // 13 is enter
+          if (document.getElementById("msg").value != '') {
+            channel.publish("update", document.getElementById("msg").value);
+          }
+        }
+    });
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="firebase.js">/<script>
+</html>
