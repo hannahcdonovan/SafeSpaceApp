@@ -19,20 +19,44 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script src="firebase.js"></script>
 
-  <body>
+<style>
+.button {
+
+}
+</style>
+
+  <body class="container-fluid">
+    <header> Create Safe Space Account </header>
     <div id="sign-up">
-      <input type="text" id="createEmail" value="" class="form-control" placeholder="Email">
-      <input type="text" id="createPassword" value="" class="form-control" placeholder="Password">
-      <button onclick="signup()"> Create Account </button>
+      <div class="form-group row">
+        <div class="col-sm-4">
+          <!-- First name  input field -->
+          <input type="text" id="createFirstName" value="" class="form-control"
+            placeholder="First Name">
+            <!-- Last name input field -->
+          <input type="text" id="createLastName" value="" class="form-control"
+            placeholder="Last Name">
+          <!-- Class year input filed -->
+          <input type="text" id="createClassYear" value="" class="form-control"
+            placeholder="Class Year">
+          <!-- Email input field -->
+          <input type="text" id="createEmail" value="" class="form-control"
+            placeholder="name@bowdoin.edu">
+          <!-- Passwrod input field -->
+          <input type="password" id="createPassword" value="" class="form-control"
+            placeholder="Password">
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="signup()"> Create Account </button>
     </div>
 
     <div id="anoymous-sign-up">
-      Or sign up anonymously
-      <button onclick="anonymousSignUp()"> Sign Up Anonymously </button>
+      <div class="form-group row">
+      <header class="text">
+        <button class="btn btn-secondary" onclick="anonymousSignUp()"> Sign Up Anonymously </button>
+      </div>
     </div>
   </body>
 
-  <script type="text/javascript"> </script>
   <script src="signup.js"> </script>
-
 </html>

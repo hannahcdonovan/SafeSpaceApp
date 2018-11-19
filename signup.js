@@ -3,12 +3,11 @@
 
 function signup() {
 
-  var email = "";
-    if (document.getElementById("createEmail").value.includes("@bowdoin.edu")) {
-      email = document.getElementById("createEmail").value
-    };
-
+  var email = document.getElementById("createEmail").value
   var password = document.getElementById("createPassword").value;
+  var displayName = document.getElementById("createFirstName").value + " " +
+                    document.getElementById("createLastName").value
+  var classYear = document.getElementById("createClassYear").value
 
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
     // Handle Errors here.
@@ -51,6 +50,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
+    window.location = "chat.html";
     // ...
   }
 });
