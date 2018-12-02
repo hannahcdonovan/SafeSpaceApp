@@ -8,3 +8,9 @@ var config = {
   messagingSenderId: "617722055142"
 };
 firebase.initializeApp(config);
+
+
+function logout() {
+  firebase.auth().signOut();
+  window.location = "index.html";
+}

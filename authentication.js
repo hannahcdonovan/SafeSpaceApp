@@ -5,15 +5,15 @@
   */
 
 //Anonymous user information
-
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
-    window.location = "chat.html";
+    window.location = "/chat.html"
   }
 });
+
 
 function login() {
 
@@ -27,16 +27,7 @@ function login() {
     if (!userEmail.includes("@bowdoin.edu")) {
       window.alert("Error: "+ error);
     }
-  });
-}
-
-function testRouteToSignup() {
-  window.location = "/signup.html";
-}
-
-function logout() {
-  firebase.auth().signOut();
-  window.location = "index.html";
+  })
 }
 
 // Signs up user to Firebase console and has them confirm identity width
@@ -60,7 +51,6 @@ function signup() {
     }
 
   });
-  email-password.html
 
   firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
     .then(function() {
