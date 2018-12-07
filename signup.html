@@ -13,43 +13,134 @@
     <meta charset="utf-8">
     <!-- Ensures bootstrap is responsive to mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="firebase.js"></script>
+    <script src="authentication.js"> </script>
   </header>
 
-  <!--firebase.js-->
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script src="firebase.js"></script>
-  <script src="authentication.js"> </script>
+    <!--Navbar-->
+    <div id="nav_bar">
+      <nav class="navbar navbar-inverse">
+
+        <!-- Navbar head-->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"> Bowdoin College Safe Space </a>
+        </div>
+
+        <!-- Navbar body -->
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"> <a href="index.html"> Home </a> </li>
+            <li><a href="survivor_signin.html">Get in Touch with an Advocate</a></li>
+            <li><a href="advocates.html">Advocates</a></li>
+            <li><a href="https://www.bowdoin.edu/title-ix/index.html">Title IX Resources</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
   <body class="container-fluid">
-    <header> Create Safe Space Account </header>
-    <div id="sign-up">
-      <div class="form-group row">
-        <div class="col-sm-4">
-          <!-- First name  input field -->
-          <input type="text" id="createFirstName" value="" class="form-control"
-            placeholder="First Name">
-            <!-- Last name input field -->
-          <input type="text" id="createLastName" value="" class="form-control"
-            placeholder="Last Name">
-          <!-- Class year input filed -->
-          <input type="text" id="createClassYear" value="" class="form-control"
-            placeholder="Class Year">
-          <!-- Email input field -->
-          <input type="text" id="createEmail" value="" class="form-control"
-            placeholder="name@bowdoin.edu">
-          <!-- Passwrod input field -->
-          <input type="password" id="createPassword" value="" class="form-control"
-            placeholder="Password">
-        </div>
+    <div class="text-center">
+      <div id="title">
+        <h4 class="font-weight-bold"> Create a Safe Space Account </h4>
       </div>
-      <button class="btn btn-primary" onclick="signup()"> Create Account </button>
+      <div id="sign-up">
+        <div class="form-group row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+
+            <!-- First name  input field -->
+            <div id="first-name">
+              <input type="text" id="createFirstName" value="" class="form-control"
+                placeholder="first name">
+            </div>
+
+              <!-- Last name input field -->
+            <div id="last-name">
+              <input type="text" id="createLastName" value="" class="form-control"
+                placeholder="last name">
+            </div>
+
+            <!-- Class year input filed -->
+            <div id="class-year">
+              <input type="text" id="createClassYear" value="" class="form-control"
+                placeholder="class year">
+            </div>
+
+            <!-- Email input field -->
+            <div id="email">
+              <input type="text" id="createEmail" value="" class="form-control"
+                placeholder="name@bowdoin.edu">
+            </div>
+
+            <!-- Password input field -->
+            <div id="password">
+              <input type="password" id="createPassword" value="" class="form-control"
+                placeholder="password">
+            </div>
+
+            <!--Create Account Button -->
+            <button class="btn btn-primary" onclick="signup()"> Create Account </button>
+
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <div id="anoymous-sign-up">
-      <div class="form-group row">
-      <header class="text">
-        <button class="btn btn-secondary" onclick="anonymousSignUp()"> Sign Up Anonymously </button>
-      </div>
-    </div>
   </body>
+
+<style>
+
+.btn-primary {
+  background-color: #f6c4a6;
+  border-color: #ffff;
+}
+
+.btn-primary:hover {
+  background-color: #e1b398;
+  border-color: #e1b398;
+}
+
+#nav_bar {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+#title {
+  color: #a6a6a6;
+  padding-bottom: 15px;
+  padding-top: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#first-name {
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#last-name,
+#class-year,
+#email {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#password {
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+body {
+  font-family: "American Typewriter", serif;
+  background-image: url("blue_chev2.png");
+}
+
+</style>
+
 </html>
