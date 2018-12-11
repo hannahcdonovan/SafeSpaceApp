@@ -15,7 +15,6 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script src="firebase.js"></script>
   <script src="authentication.js"> </script>
-
 </head>
 
 <!--Navbar-->
@@ -24,7 +23,7 @@
 
     <!-- Navbar head-->
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"> Bowdoin College Safe Space </a>
+      <a class="navbar-brand"> Bowdoin College Safe Space </a>
     </div>
 
     <!-- Navbar body -->
@@ -32,7 +31,7 @@
       <ul class="nav navbar-nav">
         <li class="active"> <a href="index.html"> Home </a> </li>
         <li><a href="survivor_signin.html">Get in Touch with an Advocate</a></li>
-        <li><a href="advocates.html">Advocates</a></li>
+        <li><a href="advocate_signin.html">Advocates</a></li>
         <li><a href="https://www.bowdoin.edu/title-ix/index.html">Title IX Resources</a></li>
       </ul>
     </div>
@@ -61,28 +60,31 @@
           <div class="col-lg-4 center-block">
 
             <!-- Email input field -->
-            <input type="text" id="email_field" value="" class="form-control"
-              placeholder="name@bowdoin.edu">
+            <div id="email">
+              <input type="text" id="email_field" value="" class="form-control"
+                placeholder="name@bowdoin.edu">
+            </div>
 
             <!-- Password input field -->
-            <input type="password" id="password_field" value="" class="form-control"
-                placeholder="password">
+            <div id="password">
+              <input type="password" id="password_field" value="" class="form-control"
+                  placeholder="password">
+            </div>
 
             <div id="sign-in-btns" class="btn-group">
               <button class="btn btn-primary" onclick="login()"> Login </button>
-              <button class="btn btn-primary" onclick="anonymousSignUp()"> Continue Anonymously </button>
+              <button class="btn btn-primary" onclick="anonymousLogin()"> Continue Anonymously </button>
             </div>
 
             <!-- If new to safe space support, sign up here -->
             <div id="sign-up">
-              <a href="signup.html"> New to using Safe Space's chat? Sign up here. </a>
+              <a href="register.html"> New to using Safe Space's chat? Sign up here. </a>
             </div>
           </div>
         </div>
     </div>
 
   </div>
-
 </body>
 
 <style>
@@ -95,6 +97,11 @@
 .btn-primary:hover {
   background-color: #e1b398;
   border-color: #e1b398;
+}
+
+#email, #password {
+  padding-right: 85px;
+  padding-left: 85px;
 }
 
 #sign-up {
@@ -120,7 +127,7 @@
 }
 
 #sign-in-buttons {
-  padding top: 10px;
+  padding top: 15px;
   padding right: 30px;
   padding-left: 30px;
   padding-bottom: 15px;
@@ -137,10 +144,6 @@
   padding-top: 175px
 }
 
-#sign-in-btns {
-  padding-top: 10px;
-}
-
 #log-in, #info-inputs {
   padding-top: 30px;
   padding-right: 30px;
@@ -150,10 +153,20 @@
 
 body {
   font-family: "American Typewriter", serif;
+  background-image: url("blue_chev2.png");
+
 }
 
-body {
-  background-image: url("blue_chev2.png");
+a:link {
+  color: #a6a6a6;
+}
+
+a:visited {
+  color: #a6a6a6;
+}
+
+a:hover {
+  a: #c7c9cb;
 }
 
 </style>
