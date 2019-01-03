@@ -14,25 +14,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"> </script>
     <script src="scripts/firebase.js"></script>
-
-    <style>
-    .img-fluid {
-      max-width: 25%;
-      height: auto;
-    }
-
-    body {
-      background-image: url("images/blue_chev2.png");
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/chat.css">
 
   </head>
 
   <body class="container-fluid">
     <button onclick="logout()" class="btn btn-primary"> Logout </button>
     <div class="text-center">
-      <img src="images/logo.png" class="img-fluid" alt="Responsive image">
+      <img src="images/cover_logo_2.png" class="rounded" width="200" height="200">
     </div>
+    <br>
     <div class="input-group">
       <input type="text" id="msg" value="" class="form-control">
       <span class="input-group-btn">

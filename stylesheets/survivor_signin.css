@@ -1,0 +1,81 @@
+/* survivor_signin.css */
+
+.btn-primary {
+  background-color: #f6c4a6;
+  border-color: #ffff;
+}
+
+.btn-primary:hover {
+  background-color: #e1b398;
+  border-color: #e1b398;
+}
+
+#email, #password {
+  padding-right: 85px;
+  padding-left: 85px;
+}
+
+#sign-up {
+  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+#logo {
+  padding-bottom: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 30px;
+
+}
+
+#input-fields {
+  padding-top: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
+#sign-in-buttons {
+  padding top: 15px;
+  padding right: 30px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+
+#nav_bar {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+#sign-in {
+  padding-top: 175px
+}
+
+#log-in, #info-inputs {
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+body {
+  font-family: "American Typewriter", serif;
+  background-image: url("../images/blue_chev2.png");
+
+}
+
+a:link {
+  color: #a6a6a6;
+}
+
+a:visited {
+  color: #a6a6a6;
+}
+
+a:hover {
+  a: #c7c9cb;
+}

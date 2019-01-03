@@ -15,6 +15,9 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script src="scripts/firebase.js"></script>
   <script src="scripts/login.js"> </script>
+
+  <!--Imported custom stylesheet -->
+  <link rel="stylesheet" href="stylesheets/survivor_signin.css">
 </head>
 
 <!--Navbar-->
@@ -73,7 +76,6 @@
 
             <br>
 
-
             <div id="sign-in-btns" class="btn-group">
               <button class="btn btn-primary" onclick="login()"> Login </button>
               <button class="btn btn-primary" onclick="anonymousLogin()"> Continue Anonymously </button>
@@ -89,89 +91,5 @@
 
   </div>
 </body>
-
-<style>
-
-.btn-primary {
-  background-color: #f6c4a6;
-  border-color: #ffff;
-}
-
-.btn-primary:hover {
-  background-color: #e1b398;
-  border-color: #e1b398;
-}
-
-#email, #password {
-  padding-right: 85px;
-  padding-left: 85px;
-}
-
-#sign-up {
-  padding-top: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-}
-
-#logo {
-  padding-bottom: 15px;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-top: 30px;
-
-}
-
-#input-fields {
-  padding-top: 15px;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-bottom: 10px;
-}
-
-#sign-in-buttons {
-  padding top: 15px;
-  padding right: 30px;
-  padding-left: 30px;
-  padding-bottom: 15px;
-}
-
-#nav_bar {
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 30px;
-  padding-left: 10px;
-}
-
-#sign-in {
-  padding-top: 175px
-}
-
-#log-in, #info-inputs {
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-}
-
-body {
-  font-family: "American Typewriter", serif;
-  background-image: url("images/blue_chev2.png");
-
-}
-
-a:link {
-  color: #a6a6a6;
-}
-
-a:visited {
-  color: #a6a6a6;
-}
-
-a:hover {
-  a: #c7c9cb;
-}
-
-</style>
 
 </html>

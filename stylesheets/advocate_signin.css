@@ -1,0 +1,53 @@
+/* advocate_signin.css */
+
+.btn-primary {
+  background-color: #bfddf6;
+  color: #000000;
+  border-color: #ffff;
+}
+
+.btn-primary:hover {
+  border-color: #a9c4db;
+  background-color: #a9c4db;
+}
+
+a:link {
+  color: #a6a6a6;
+}
+
+a:visited {
+  color: #a6a6a6;
+}
+
+a:hover {
+  a: #c7c9cb;
+}
+
+#title {
+  padding-top: 100px;
+  padding-botton: 10px;
+}
+
+#nav_bar {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+#email {
+  padding-top: 20px;
+  padding-left: 500px;
+  padding-right: 500px;
+}
+
+#password {
+  padding-bottom: 10px;
+  padding-left: 500px;
+  padding-right: 500px;
+}
+
+body {
+  font-family: "American Typewriter", serif;
+  background-image: url("../images/pink_chev.png");
+}
